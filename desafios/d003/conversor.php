@@ -12,10 +12,16 @@
         <p>
             <?php 
             $num = $_GET["real"] ?? 0;
+            $numFormat = number_format($num, 2, ",", ".");
             $dolar = $num / 5.61;
-            echo ("Seus R$ $num, equivalem a U$$dolar" . "<br>");
+            $dolarFormat = number_format($dolar, 2, ",", ".");
+            echo ("Seus R$ $numFormat equivalem a <Strong>U$ $dolarFormat</Strong>" . "<br>");
             ?>
-            <span>Cotação fixa de R$5,61 informada diretamente no código.</span>
+        </p>
+        <p>
+            <?php
+            echo ("<Strong>Cotação fixa de</Strong> R$5,61 informada diretamente no código.");
+            ?>
         </p>
         <button onclick="javascript:history.go(-1)">&#x2B05; Voltar</button>
     </main>
