@@ -20,7 +20,7 @@
     $data = json_decode($response, true);
     // Verificar se a resposta da API está vazia ou não retornou dados
     if (empty($data)) {
-        echo "<p>Não foi possível obter a cotação no momento. Tente novamente na segunda-feira.</p>";
+        echo "<p>Não foi possível obter a cotação no momento. Por favor, tente novamente na segunda-feira.</p>";
     } else {
         $dollarQuote = $data[0]["valor"];
         $default = numfmt_create("pt_BR", NumberFormatter::CURRENCY);
