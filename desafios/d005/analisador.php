@@ -8,15 +8,15 @@
 </head>
 <body>
     <main>
-        <h1>Analisador de números</h1>
+        <h1>Analisador de número real</h1>
         <?php 
             $num = $_REQUEST["número"] ?? 0;
-            echo ("<p>Analisando o número <strong>". number_format($num, 3, ",", ".") ."</strong> infromado pelo usuário: </p>");
-        ?>
-        <?php 
+
+            echo ("<p>Analisando o número <strong>". number_format($num, 3, ",", ".") ."</strong> informado pelo usuário: </p>");
+
             $numInt = (int) $num;
-            $numFloat = (float) $num;
-            $Float = $numFloat - $numInt;
+            $Float = $num - $numInt;
+
             echo ("<ul>
                      <li>A parte inteira do número é <strong>". number_format($numInt, 0, ",", ".") ."</strong></li>
                      <li>A parte fracionária do número é <strong>". number_format($Float, 3, ",", ".") ."</strong></li>
