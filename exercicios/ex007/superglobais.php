@@ -14,6 +14,10 @@
         <pre>
             <?php
                 setcookie("dia-da-semana", "Segunda", time() + 3600);
+                session_start();
+
+                $_SESSION["teste"] = "funcionou";
+
                 echo ("<h1>Superglobal GET</h1>");
                 var_dump($_GET);
 
@@ -28,6 +32,15 @@
 
                 echo ("<h1>Superglobal SESSION</h1>");
                 var_dump($_SESSION);
+
+                echo ("<h1>Superglobal ENV</h1>");
+                var_dump($_ENV);
+
+                echo ("<h1>Superglobal SERVER</h1>");
+                var_dump($_SERVER);
+
+                echo ("<h1>Superglobal GLOBALS</h1>");
+                var_dump($GLOBALS);
             ?>
         </pre>
     </main>
