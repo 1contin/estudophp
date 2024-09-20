@@ -10,23 +10,32 @@
     <main>
         <?php 
             $dividendo = $_GET["dividendo"] ?? 0;
-            $divisor = $_GET["divisor"] ?? 0;
+            $divisor = $_GET["divisor"] ?? 1;
         ?>
         <h1>Anatomia de uma divisão</h1>
         <form action=<?=$_SERVER['PHP_SELF']; ?> method="get">
-            <label for="dividendo">Dividendo: <input type="number" name="dividendo" id="dividendo" value=<?=$dividendo?>></label>
-            <label for="dividendo">Divisor: <input type="number" name="divisor" id="divisor" value=<?=$divisor?>></label>
+            <label for="dividendo">Dividendo: <input type="number" name="dividendo" min="0" id="dividendo" value=<?=$dividendo?>></label>
+            <label for="dividendo">Divisor: <input type="number" name="divisor" min="1" id="divisor" value=<?=$divisor?>></label>
             <input type="submit" value="Analisar">
         </form>
     </main>
 
     <section>
         <?php
-        $quociente = $dividendo / $divisor;
+        $quociente = intdiv($dividendo, $divisor);
         $resto = $dividendo % $divisor;
-        var_dump($quociente);
-        echo ("<p>O quociente é igual a: <strong>$quociente</strong><br></p>");
-        echo ("<p>O resto da divisão é igual a: <strong>$resto</strong><br></p>");
         ?>
+
+        <table class="divisao">
+            <tr>
+                <td><?=$dividendo?></td>
+                <td><?=$divisor?></td>
+            </tr>
+            <tr>
+                <td><?=$resto?></td>
+                <td><?=$quociente?></td>
+            </tr>
+        </table>
+    </section>
 </body>
 </html>
